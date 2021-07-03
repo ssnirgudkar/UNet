@@ -22,7 +22,7 @@ class MarineImages(keras.utils.Sequence):
         batch_input_img_paths = self.input_img_paths[i : i + self.batchSize]
         batch_segmentation_img_paths = self.segmentation_img_paths[i : i + self.batchSize]
 
-        x = np.zeros((self.batchSize,) + self.imageSize + (3,), dtype="uint8")
+        x = np.zeros((self.batchSize,) + self.imageSize, dtype="uint8")
         print("x size = {0}".format(x.shape))
 
         for index, path in enumerate(batch_input_img_paths):
