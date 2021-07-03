@@ -1,7 +1,7 @@
 import os
 
-inputDir = "../IRLabeledDataset/ir_train_images_4" # directory containing input images
-segmentationImageDir = "../IRLabeledDataset/ir_train_masks_4" # directory containing output segmentation images
+inputDir = "/content/drive/MyDrive/PhD/IRLabeledDataset/ir_train_images_4_resized" # directory containing input images
+segmentationImageDir = "/content/drive/MyDrive/PhD/IRLabeledDataset/ir_train_masks_4_resized" # directory containing output segmentation images
 
 
 def createImageDirPaths():
