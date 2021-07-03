@@ -45,7 +45,7 @@ epochs = 10
 model.fit(marineData_training, epochs=epochs, validation_data=marineData_validation, callbacks=callback)
 
 """Generate predictions."""
-validation_gen = MarineImages(batch_size, img_size, validation_input_img_paths, validation_target_img_paths)
+validation_gen = MarineImages(batchSize, imageSize, validation_input_img_paths, validation_target_img_paths)
 validation_preds = model.predict(validation_gen)  
   
   

@@ -26,7 +26,7 @@ class MarineImages(keras.utils.Sequence):
         print("x size = {0}".format(x.shape))
 
         for index, path in enumerate(batch_input_img_paths):
-            img = load_img(path, target_size=self.imageSize)
+            img = load_img(path, target_size=self.imageSize, color_mode = "grayscale")
             print("index = {0}, path = {1}".format(index, path))
             print("target size = {0}".format(self.imageSize))
             print("img shape = {0}".format(img.size))
