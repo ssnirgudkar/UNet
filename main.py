@@ -43,3 +43,28 @@ callback = [tf.keras.callbacks.ModelCheckpoint("uml_segmentation.h5", save_best_
 
 epochs = 10
 model.fit(marineData_training, epochs=epochs, validation_data=marineData_validation, callbacks=callback)
+
+"""Generate predictions."""
+validation_gen = MarineImages(batch_size, img_size, validation_input_img_paths, validation_target_img_paths)
+validation_preds = model.predict(validation_gen)  
+  
+  
+def display_mask(i):
+    """Quick utility to display a model's prediction."""
+    mask = np.argmax(validation_preds[i], axis=-1)
+    mask = np.expand_dims(mask, axis=-1)
+    img = PIL.ImageOps.autocontrast(keras.preprocessing.image.array_to_img(mask))
+    display(img)
+    
+# Display results for validation image #3
+i = 3
+
+# Display input image
+display(Image(filename=validation_input_img_paths[i]))
+
+# Display ground-truth target mask
+img = PIL.ImageOps.autocontrast(load_img(validation_target_img_paths[i]))
+display(img)
+
+# Display mask predicted by our model
+display_mask(i)  
