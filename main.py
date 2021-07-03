@@ -12,7 +12,7 @@ import random
 imageSize = (640, 512)
 numClasses = 7
 # sky:0, water:1, structure:2, Obstacle:3, living obstacle:4, background:5, self:6
-batchSize = 32 # This may not be possible.
+batchSize = 5 # This may not be possible.
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 [input_img_paths, segmentation_img_paths] = createImageDirPaths()
