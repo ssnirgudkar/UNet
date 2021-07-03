@@ -8,6 +8,13 @@ from DataSequence import MarineImages
 import PIL
 
 import random
+from tensorflow import keras
+import numpy as np
+from IPython.display import Image, display
+from tensorflow.keras.preprocessing.image import load_img
+from PIL import ImageOps
+
+
 
 imageSize = (640, 512)
 numClasses = 7
@@ -61,10 +68,13 @@ i = 3
 
 # Display input image
 display(Image(filename=validation_input_img_paths[i]))
+print ("input image displayed")
 
 # Display ground-truth target mask
 img = PIL.ImageOps.autocontrast(load_img(validation_target_img_paths[i]))
 display(img)
+print ("ground truth masked image displayed")
 
 # Display mask predicted by our model
-display_mask(i)  
+display_mask(i) 
+print ("inference masked image displayed") 
